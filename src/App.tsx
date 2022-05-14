@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import { Login } from "./module/account";
+import { Register } from "./module/account";
 import "./App.scss";
 
 const Home = () => {
@@ -25,7 +25,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Register />} />
         <Route path="/register" element={<Home />} />
       </Routes>
     </div>

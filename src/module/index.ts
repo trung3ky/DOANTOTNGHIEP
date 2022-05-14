@@ -1,1 +1,1 @@
-export { Login } from './account';
+export { Register } from './account';
