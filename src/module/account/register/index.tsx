@@ -1,3 +1,4 @@
+import { ReloadOutlined } from "@ant-design/icons";
 import { Form, Input, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
 import "./style.scss";
@@ -15,8 +16,6 @@ const FormRegister = () => {
     <Form
       name="basic"
       layout="vertical"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -39,16 +38,28 @@ const FormRegister = () => {
       </Form.Item>
 
       <Form.Item
-        label="Verification code"
+        label={
+          <div className="label-verification">
+            <span>Verification code</span>
+            <span className="resend-code">
+              Resend code &nbsp;
+              <ReloadOutlined />
+            </span>
+          </div>
+        }
+        className="verification"
         name="verificationcode"
         rules={[
           { required: true, message: "Please input your verification code!" },
         ]}
       >
-        <Input placeholder="Please enter the verification code" />
+        <Input
+          disabled={true}
+          placeholder="Please enter the verification code"
+        />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item>
         <Button type="primary" htmlType="submit">
           Sign up
         </Button>
@@ -62,17 +73,36 @@ export const Register = () => {
     <div className="register">
       <div className="form-register-container">
         <div className="container-header">
-          <span>
-            Have an account?<Link to="./login">Sign In</Link>
+          <span className="have-account">
+            Have an account? &nbsp;<Link to="./login">Sign In</Link>
           </span>
-          <h1>Welcome to Shop3</h1>
-          <div className="">
+          <h1 className="title">Welcome to Shop3</h1>
+          <div className="sub-content">
             <span>Đây chỉ là 1 đoạn văn bản mẫu dài hơn</span>
             <span>Đây chỉ là 1 đoạn văn bản mẫu</span>
           </div>
         </div>
         <div className="container-body">
           <FormRegister />
+        </div>
+        <div className="signup-other-text">
+          <span></span>
+          <span className="other">Or sign up with</span>
+          <span></span>
+        </div>
+        <div className="signup-other-container">
+          <div className="facebook-container">
+            <img
+              src="https://www.facebook.com/images/fb_icon_325x325.png"
+              alt="logo-facebook"
+            />
+          </div>
+          <div className="google-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"
+              alt="logo-google"
+            />
+          </div>
         </div>
       </div>
       <div className="slogan-container"></div>

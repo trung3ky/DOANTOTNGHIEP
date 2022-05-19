@@ -9,7 +9,99 @@
 
     .form-register-container {
         flex: 1;
+        display: flex;
         height: 100%;
+        align-items: center;
+        flex-direction: column;
+
+        .container-header {
+            margin-bottom: var(--spacing-md);
+            width: 70%;
+            .have-account {
+                display: block;
+                margin-top: var(--spacing-md);
+            }
+            .title {
+                display: block;
+                margin: 0;
+                margin-top: var(--spacing-xl);
+                font-size: 40px;
+            }
+            .sub-content {
+                display: flex;
+                flex-direction: column;
+                font-size:var(--fs-md)
+            }
+        }
+        .container-body {
+            width: 70%;
+            margin-top: var(--spacing-md);
+
+            button[type=submit] {
+                height: 35px;
+                margin-top: var(--spacing-sm);
+                width: 100%;
+                line-height:0;
+            }
+
+            .verification div label{
+                width: 100%;
+            }
+            .label-verification {
+                display: flex;
+                width: 100%;
+                justify-content:space-between;
+                cursor: pointer;
+                .resend-code {
+                    color: var(--color-primary)
+                }
+            }
+        }
+        .signup-other-text {
+            display: flex;
+            align-items: center;
+            width: 70%;
+            margin-top: var(--spacing-md);
+            span:first-child {
+                display: block;
+                height: 0;
+                border-top: 1px solid var(--color-txt-border);
+                width: 100%;
+                margin-right: var(--spacing-md);
+            }
+            .other {
+                white-space: nowrap;
+            }
+            span:last-child {
+                display: block;
+                height: 0;
+                border-top: 1px solid var(--color-txt-border);
+                width: 100%;
+                margin-left: var(--spacing-md);
+            }
+        }
+
+        .signup-other-container {
+            margin-top: var(--spacing-md);
+            width: 70%;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+            .facebook-container, .google-container {
+                height: 44px;
+                flex: 1;
+                border: solid 1px var(--color-primary);
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                border-radius: 3px;
+                cursor: pointer;
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
     }
 
     .slogan-container {
@@ -17,4 +109,5 @@
         height: 100%;
         background-color: var(--color-primary);
     }
+
 }
