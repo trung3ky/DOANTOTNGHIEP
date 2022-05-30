@@ -1,3 +1,15 @@
 @import "~antd/dist/antd.css";
-@import './variable.scss';
-
+@import "./variable.scss";
+body {
+    // font-family: var(--ff-base) !important;
+    box-sizing: border-box !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0;
+    }
+    overflow-x: hidden;
+}

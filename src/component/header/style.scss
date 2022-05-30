@@ -1,0 +1,38 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 97px;
+    padding: var(--spacing-lg) var(--spacing-md);
+
+    .header-wrapper {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .container-left {
+            display: flex;
+            align-items: center;
+
+            .search-container {
+                .ant-input-group {
+                }
+            }
+
+            .account-container {
+                padding-left: 50px;
+
+                span {
+                    cursor: pointer;
+                    font-size: var(--fs-lg);
+                }
+
+                span ~ span {
+                    margin-left: var(--spacing-md);
+                }
+            }
+        }
+    }
+}
