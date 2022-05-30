@@ -1,6 +1,7 @@
 import React from "react";
 import { DownOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import "./style.scss";
+import { SubMenu } from "../sub-menu";
 
 export function Menu() {
   return (
@@ -10,6 +11,9 @@ export function Menu() {
           <UnorderedListOutlined />
           <span className="text">All categories</span>
           <DownOutlined />
+          <div className="submenu">
+            <SubMenu />
+          </div>
         </div>
         <ul className="menu-list">
           <li className="menu-item">
