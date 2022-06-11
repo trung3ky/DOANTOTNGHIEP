@@ -1,18 +1,14 @@
-import {
-  EyeOutlined,
-  HeartOutlined,
-  StarFilled,
-  StarOutlined,
-} from "@ant-design/icons";
+import { EyeOutlined, HeartOutlined } from "@ant-design/icons";
 import { Tooltip } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Product } from "../../../../model";
+import { Star } from "../../../../component";
 import "./style.scss";
 
-export function CartItem({product}:{product:Product}) {
-  const {name,image,price,id} = product;
-   return (
+export function CartItem({ product }: { product: Product }) {
+  const { name, image, price, id, rating } = product;
+  return (
     <div className="cart-item">
       <div
         className="top-container"
@@ -45,18 +41,14 @@ export function CartItem({product}:{product:Product}) {
       </div>
       <div className="bottom-container">
         <div className="star">
-          <StarFilled style={{ color: "yellow" }} />
-          <StarFilled style={{ color: "yellow" }} />
-          <StarFilled style={{ color: "yellow" }} />
-          <StarOutlined style={{ color: "#d2d2d2" }} />
-          <StarOutlined style={{ color: "#d2d2d2" }} />
+          <Star star={Number(rating)} isNumberStar={false} />
         </div>
         <h5>
           <Link to={`/product/${id}`}>{name}</Link>
         </h5>
         <span className="price">
-          <span className="price-old">{price}</span>
-          <span className="price-new">$240.00</span>
+          <span className="price-old">$240.00</span>
+          <span className="price-new">${price}.00</span>
         </span>
       </div>
     </div>

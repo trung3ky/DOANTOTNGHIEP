@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Footer, Header, Menu } from "../../component";
 import { CarouselProduct, CartItem, ProductListByCategory } from "./component";
-import { boxList, boxListDiscount,Product } from "../../model";
+import { boxList, boxListDiscount, Product } from "../../model";
 import { TitleTopic } from "../../component";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,14 +14,15 @@ import "swiper/css/navigation";
 import "./style.scss";
 import { Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { productAPI } from "../../access";
 
 export function Home() {
-  const [data,setData] = useState<Product[]>([]);
-  useEffect(()=>{
-    fetch('http://localhost:3001/product')
-    .then(response => response.json())
-    .then(dataPro => setData(dataPro));
-  },[])
+  const [data, setData] = useState<Product[]>([]);
+  useEffect(() => {
+    fetch(productAPI())
+      .then((response) => response.json())
+      .then((dataPro) => setData(dataPro));
+  }, []);
   return (
     <div className="home-container">
       <Header />
@@ -62,13 +63,13 @@ export function Home() {
             modules={[Autoplay, Navigation]}
             className="mySwiper"
           >
-            { data.map((item,index) => {
-              if(index > 10) {
+            {data.map((item, index) => {
+              if (index > 10) {
                 return;
               }
               return (
                 <SwiperSlide key={item.id}>
-                  <CartItem product={item}  />
+                  <CartItem product={item} />
                 </SwiperSlide>
               );
             })}
@@ -106,13 +107,13 @@ export function Home() {
             modules={[Autoplay, Navigation]}
             className="mySwiper"
           >
-            {data.map((item,index) => {
-              if(index > 10) {
+            {data.map((item, index) => {
+              if (index > 10) {
                 return;
               }
               return (
                 <SwiperSlide key={item.id}>
-                  <CartItem product={item}/>
+                  <CartItem product={item} />
                 </SwiperSlide>
               );
             })}
@@ -121,9 +122,9 @@ export function Home() {
         {/* <ProductListByCategory /> */}
         <TitleTopic title="All Products" />
         <div className="list-product">
-        { data.map(item => {
-          return <CartItem product={item} />
-        })}
+          {data.map((item) => {
+            return <CartItem product={item} />;
+          })}
         </div>
       </div>
 

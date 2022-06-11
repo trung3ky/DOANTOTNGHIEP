@@ -4,3 +4,5 @@ export { Menu } from "./menu";
 export { SubMenu } from "./sub-menu";
 export { TitleTopic } from "./title-topic";
 export { Footer } from "./footer";
+export { Star } from "./star";
+export { RowRating } from "./row-rating";

@@ -1,6 +1,6 @@
 .product {
     max-width: 1200px;
-    border-radius:3px;
+    border-radius: 3px;
     display: flex;
     width: 100%;
     margin: auto;
@@ -13,19 +13,17 @@
         font-size: 16px;
     }
     .product__image {
-        max-width:550px;
+        max-width: 550px;
         padding: var(--spacing-md);
         height: 550px;
         width: 100%;
         flex: 1;
         img {
-            object-fit: cover;
+            object-fit: contain;
             height: 100%;
             width: 100%;
-
         }
     }
-  
 }
 .mySwiper {
     max-width: 1200px;
@@ -36,7 +34,7 @@
     padding: var(--spacing-lg);
     width: 100%;
     .infor__name {
-        font-size: var( --fs-xl2);
+        font-size: var(--fs-xl2);
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -51,7 +49,6 @@
         .number--review,
         .number--buy {
             font-size: var(--fs-base);
-            
         }
     }
 
@@ -68,7 +65,7 @@
     }
 
     .infor__review div + div {
-        border-left: solid 1px  black;
+        border-left: solid 1px black;
     }
 
     .infor__price {
@@ -86,7 +83,7 @@
     .infor__size,
     .infor__quantity {
         display: flex;
-        color: var( --color-theme-primary);
+        color: var(--color-theme-primary);
         margin-top: var(--spacing-md);
         font-size: var(--fs-base);
         padding: 0 var(--spacing-lg);
@@ -98,6 +95,9 @@
         }
 
         button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 35px;
             width: 35px;
             font-size: var(--fs-xl2);
@@ -124,7 +124,7 @@
         .color__item,
         .size__item {
             padding: var(--spacing-xs) var(--spacing-md);
-            border: solid 1px  var(--color-theme);
+            border: solid 1px var(--color-theme);
             font-size: var(--fs-base);
             line-height: 20px;
             cursor: pointer;
@@ -152,11 +152,11 @@
                 }
 
                 button:first-child {
-                    border-right: solid 1px var(--color-theme) ;
+                    border-right: solid 1px var(--color-theme);
                 }
-                
+
                 button:last-child {
-                    border-left: solid 1px var(--color-theme) ;
+                    border-left: solid 1px var(--color-theme);
                 }
             }
 
