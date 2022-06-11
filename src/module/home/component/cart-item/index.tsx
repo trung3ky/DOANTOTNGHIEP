@@ -6,12 +6,13 @@ import {
 } from "@ant-design/icons";
 import { Tooltip } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
+import { Product } from "../../../../model";
 import "./style.scss";
 
-export function CartItem() {
-  const image =
-    "https://ninetheme.com/themes/venam/v1/wp-content/uploads/2021/05/1d20de71-9151-425f-890b-2fd4c703c430.dfbaf58eff390bef1eec9774e2e32233-600x600.jpg";
-  return (
+export function CartItem({product}:{product:Product}) {
+  const {name,image,price,id} = product;
+   return (
     <div className="cart-item">
       <div
         className="top-container"
@@ -51,10 +52,10 @@ export function CartItem() {
           <StarOutlined style={{ color: "#d2d2d2" }} />
         </div>
         <h5>
-          <a href="#a">Apple 256GB</a>
+          <Link to={`/product/${id}`}>{name}</Link>
         </h5>
         <span className="price">
-          <span className="price-old">$250.00</span>
+          <span className="price-old">{price}</span>
           <span className="price-new">$240.00</span>
         </span>
       </div>

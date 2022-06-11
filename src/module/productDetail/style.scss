@@ -1,0 +1,209 @@
+.product {
+    max-width: 1200px;
+    border-radius:3px;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    flex-direction: column;
+    &-wrap {
+        display: flex;
+    }
+    &-desc {
+        font-size: 16px;
+    }
+    .product__image {
+        max-width:550px;
+        padding: var(--spacing-md);
+        height: 550px;
+        width: 100%;
+        flex: 1;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+
+        }
+    }
+  
+}
+.mySwiper {
+    max-width: 1200px;
+    width: 100%;
+}
+.product__infor {
+    flex: 1;
+    padding: var(--spacing-lg);
+    width: 100%;
+    .infor__name {
+        font-size: var( --fs-xl2);
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: var(--fs-xl2);
+    }
+
+    .infor__review {
+        display: flex;
+        align-items: center;
+        margin-top: var(--spacing-md);
+        .number--review,
+        .number--buy {
+            font-size: var(--fs-base);
+            
+        }
+    }
+
+    .infor__review div {
+        padding: 0 var(--spacing-md);
+    }
+
+    .infor__review div:first-child {
+        padding-left: 0;
+    }
+
+    .infor__review div:last-child {
+        padding-right: 0;
+    }
+
+    .infor__review div + div {
+        border-left: solid 1px  black;
+    }
+
+    .infor__price {
+        margin-top: var(--spacing-md);
+        color: var(--color-theme-primary);
+        font-weight: normal;
+        padding: var(--spacing-md) var(--spacing-lg);
+        padding-left: 0;
+        span {
+            font-size: var(--fs-xl1);
+        }
+    }
+
+    .infor__color,
+    .infor__size,
+    .infor__quantity {
+        display: flex;
+        color: var( --color-theme-primary);
+        margin-top: var(--spacing-md);
+        font-size: var(--fs-base);
+        padding: 0 var(--spacing-lg);
+        padding-left: 0;
+        span {
+            min-width: 100px;
+            line-height: var(--fs-xl2);
+            color: var(--color-theme);
+        }
+
+        button {
+            height: 35px;
+            width: 35px;
+            font-size: var(--fs-xl2);
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        input {
+            height: 35px;
+            outline: none;
+            width: 50px;
+            text-align: center;
+            border: none;
+        }
+
+        .color__list,
+        .size__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .color__item,
+        .size__item {
+            padding: var(--spacing-xs) var(--spacing-md);
+            border: solid 1px  var(--color-theme);
+            font-size: var(--fs-base);
+            line-height: 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.2s linear;
+        }
+    }
+
+    .infor__quantity {
+        .input {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+
+            div {
+                border: solid 1px black;
+                display: flex;
+                height: 35px;
+                border-radius: 3px;
+                .btn-quantity {
+                    height: 100%;
+                    cursor: pointer;
+                }
+
+                button:first-child {
+                    border-right: solid 1px var(--color-theme) ;
+                }
+                
+                button:last-child {
+                    border-left: solid 1px var(--color-theme) ;
+                }
+            }
+
+            input {
+                background-color: transparent;
+            }
+
+            span {
+                align-self: flex-start;
+            }
+        }
+
+        .active {
+            cursor: alias;
+        }
+    }
+
+    .infor__wraper-button {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        padding-top: var(--spacing-xl);
+        div {
+            height: 4.2rem;
+            width: 15rem;
+            border-radius: 3px;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border: solid 1px var(--color-theme-primary);
+            font-size: var(--fs-lg);
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        .button__add {
+            color: var(--color-theme-primary);
+            i {
+                margin-right: var(--spacing-xl);
+            }
+        }
+
+        .button__buy {
+            color: var(--color-primary);
+            background-color: var(--color-theme-primary);
+        }
+    }
+}

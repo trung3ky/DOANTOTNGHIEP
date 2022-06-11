@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Footer, Header, Menu } from "../../component";
 import { CarouselProduct, CartItem, ProductListByCategory } from "./component";
-import { boxList, boxListDiscount } from "../../model";
+import { boxList, boxListDiscount,Product } from "../../model";
 import { TitleTopic } from "../../component";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,6 +16,12 @@ import { Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 
 export function Home() {
+  const [data,setData] = useState<Product[]>([]);
+  useEffect(()=>{
+    fetch('http://localhost:3001/product')
+    .then(response => response.json())
+    .then(dataPro => setData(dataPro));
+  },[])
   return (
     <div className="home-container">
       <Header />
@@ -56,10 +62,13 @@ export function Home() {
             modules={[Autoplay, Navigation]}
             className="mySwiper"
           >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
+            { data.map((item,index) => {
+              if(index > 10) {
+                return;
+              }
               return (
-                <SwiperSlide key={item}>
-                  <CartItem />
+                <SwiperSlide key={item.id}>
+                  <CartItem product={item}  />
                 </SwiperSlide>
               );
             })}
@@ -97,16 +106,25 @@ export function Home() {
             modules={[Autoplay, Navigation]}
             className="mySwiper"
           >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
+            {data.map((item,index) => {
+              if(index > 10) {
+                return;
+              }
               return (
-                <SwiperSlide key={item}>
-                  <CartItem />
+                <SwiperSlide key={item.id}>
+                  <CartItem product={item}/>
                 </SwiperSlide>
               );
             })}
           </Swiper>
         </>
-        <ProductListByCategory />
+        {/* <ProductListByCategory /> */}
+        <TitleTopic title="All Products" />
+        <div className="list-product">
+        { data.map(item => {
+          return <CartItem product={item} />
+        })}
+        </div>
       </div>
 
       <Footer />
